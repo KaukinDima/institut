@@ -1,0 +1,21 @@
+void binary_search(double fn_arr[], int length, double element) 
+{
+   
+   int f = 0, r = length, mid;
+   
+   while (f <= r) {
+	  mid = (f+r)/2;
+
+	  if (fn_arr[mid] == element) {
+         printf("\nSearch Element  : %.3lf was found. \n", element);
+         break;
+	  }
+      else if (fn_arr[mid] < element)
+         f = mid + 1;    
+      else
+         r = mid - 1;
+   }
+   
+   if (f > r)
+      printf("\nSearch Element : %lf  : Not Found \n", element);
+}

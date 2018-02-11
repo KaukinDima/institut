@@ -1,0 +1,47 @@
+
+PERFORMANCE, DATA STRUCTURES AND ALGORITHMS
+Exercise 08
+
+ 
+Exercise 08
+searching using recursion in c
+Name: ____________________________________	
+PURPOSE
+The purpose of this exercise is to give you practice at working with recursion in C and to use conditional compilation to control the output of a program.
+In Exercise 06, you used compiler directives (#define, #ifndef) in a header file to control whether definitions associated with the library are included. You did this to ensure that the header file is included exactly once in a source file that includes that header file. This is conditional compilation.
+In this exercise, you will use conditional compilation to control the output of your program. Any code in any source file (.h and .c) can be enclosed in a #ifdef/#endif pair or a #indef/#endif pair. The first checks to see if a constant is defined. The second checks to see if a constant is not defined. Thus, a constant (#define) can be used to control whether or not code is included in the final program. In this case, the #ifdef means, “if <constant> is defined, include the following code”. The #endif marks the end of the conditionally compiled code.
+The constant that controls the conditional compilation can be defined in a source file, or it can be defined as a parameter to the compile command. The latter is much more convenient when there are multiple source files in your program, so that you can avoid having to edit multiple files to change whether or not the constant is defined. Also, every time you edit a source file, it increases the chance of introducing errors to the program, so it is preferable to avoid editing source files if possible.
+The makefiles that you have used so far have a macro called CFLAGS. This defines parameters that are passed to the C compiler. You can define any #define constant as a parameter to the compiler by using the -D option. For example:
+	gcc -Wall -I. -DDEBUG
+This defines DEBUG, which can be used in the source code of your program to control whether or not debug output is printed as part of the output of a program.
+When you change CFLAGS in the makefile, and then type “make” to build your program, nothing will be compiled.  This is because you are not changing your source file.  When you change a file, it results in a changed modification time.  You could make a change to the source file to ensure a recompile when using the “make” command, but a change to the source file was not necessary in this case, we just only needed to change the makefile.  An easy way to solve this is to use the “touch” command on the source file.  The “touch” command sets the modification time of a file to the current time. Thus, you can edit your make file, “touch” your source files, and when you run “make”, the file will be compiled even though you have not modified the file.
+While touch allows selectively controlling which targets are made, an alternative way to force compilation of all targets in your makefile is to specify the -B option when you run make: “make -B”. Another useful make option is “-n”. This prints what would be built using make, without actually building it. The “man” page for make contains information about all the options that make recognizes.
+For this exercise you are given a program that reads a file containing a series of floating point values, each on one line in the file. The numbers in the file are already sorted in ascending order, so you do not need a sort function for this exercise.
+ACTIVITIES
+Perform each of the following activities.  If you have questions, issues, or doubts, please ask for help and do not just guess.
+1. Create a function that searches an array of doubles that has been sorted in ascending order. Use a recursive binary search for your search implementation.
+2. Modify main() to call your search function once for each item in the search_values array.
+3. Your program should display each search value and whether or not it was found in the array.
+4. Instrument your code using conditional compilation so that at compile time, you can control whether or not additional information is included in the output. The additional output should include at a minimum the index into the array and the value in the array at that index of the value that is being compared to the search value.
+5. Create a makefile to build your program.
+6. Compile your program using the makefile you created.
+7. Run your program without the conditional code, so that the additional information is not included in the output. Copy and paste the output of your program below:
+
+
+8. Run your program with the conditional code, so that the additional information is included in the output. Copy and paste the output of your program below:
+
+
+
+
+
+
+
+
+
+
+9. Document your code carefully.
+10. When you are ready to submit your work, first remove all intermediate files from your src directory.
+11. Save and archive your finished C program, your makefile and this document, and upload it to the LMS.
+
+
+

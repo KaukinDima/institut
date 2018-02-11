@@ -1,0 +1,28 @@
+
+PERFORMANCE, DATA STRUCTURES AND ALGORITHMS
+Exercise 07
+
+ 
+Exercise 07
+Sort an array of doubles
+Name: ____________________________________	
+PURPOSE
+If your program needs to store a limited amount of things (numbers, data, or records for example) a simple and effective approach is to use a list-type data structure.  In this project you will implement an array-based simple list.  When you have to organize and search through a larger number of things, more sophisticated data structures may be a better choice (covered later in the course).
+For this exercise you are given a program that reads a file containing a series of floating point values, each on one line in the file, and stores those values in an array of doubles.  You will modify this program to sort the values in the array and to print the sorted array.
+ACTIVITIES
+Perform each of the following activities.  If you have questions, issues, or doubts, please ask for help and do not just guess.
+1. Create a function that sorts an array of doubles, in ascending order, using an insertion sort algorithm.  The function should take the array to be sorted as a parameter and sort the data in place within the array.  It should not copy the array.
+2. Modify main() to call your sort function and to print the sorted array to the terminal.
+3. Create a makefile to build your program.
+4. Compile your program using the makefile that you created.
+5. Run your program.  Copy and paste the output of your program below:
+
+
+
+
+
+
+
+6. Document your code carefully.
+7. When you are ready to submit your work, first remove all intermediate files from your src directory.
+8. Save and archive your finished C program, your makefile, and this document, and upload them to the LMS.
